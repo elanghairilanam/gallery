@@ -28,28 +28,56 @@ body{
 
 
                 a:hover span{
-                    opacity: 1;
+                    opacity: 0.8;
+                }
+
+                .overlay{
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    background-color: rgba($color: #000000, $alpha: 0);
+                    z-index: 9999;
+                    transition: 0.3s;
+
+                    .img-full-1{
+                        width: 0;
+                        height: 0;
+                        overflow: hidden;
+                    }
+                }
+
+                .overlay:target{
+                    right: 0;
+                    bottom: 0;
+                    background-color: rgba($color: #000000, $alpha: 0.5);
+
+                    .img-full-1{
+                        height: auto;
+                        width: auto;
+                        max-height: 100%;
+                        justify-self: center;
+                        padding: 50px 0;
+                    }
+                }
+
+                .img-thumb1,.img-thumb2,.img-thumb3,.img-thumb4{
+                    border-radius: 50% ;
+                }
+
+                span{
+                    background-color: lightgray;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    line-height: 120px;
+                    text-align: center;
+                    border-radius: 50%;
+                    opacity: 0;
+                    transition: 0.3s;
                 }
             }
-
-            img{
-                border-radius: 50% ;
-            }
-
-            span{
-                background-color: lightgray;
-                display: block;
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                top: 0;
-                line-height: 120px;
-                text-align: center;
-                border-radius: 50%;
-                opacity: 0;
-                transition: 0.3s;
-            }
-            
         }
     }
 }
